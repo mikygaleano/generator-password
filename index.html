@@ -15,15 +15,21 @@
               <div >
                 <div class="w-full inline-flex gap-2">
                   <input 
-                    type="number"
                     class="w-10 border p-1 rounded-md"
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
                     name="longitud" 
-                    id="longitud">
+                    id="number">
                   <input 
                     class="w-3/4"
                     type="range"
+                    min="0"
+                    max="100"
+                    step="1"
                     name="longitud" 
-                    id="longitud">
+                    id="range">
                 </div>
               </div>
               <div class="grid grid-cols-3 gap-y-4">
@@ -69,7 +75,16 @@
                 </div> 
               </div>
             </form>
-            <button class="bg-red-500 rounded-lg w-20 mt-5" type="submit">Generar</button>
+            <button 
+              id="generator"
+              class="bg-red-500 rounded-lg w-20 mt-5">
+              Generar
+            </button>
+        </div>
+      </section>
+      <section class="w-full flex place-content-center mt-10">
+        <div
+          id="generarpassword">
         </div>
       </section>
     </main>
