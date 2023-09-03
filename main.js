@@ -16,9 +16,7 @@ simbolos = '-+/*';
 let contraseña = '';
 
 const eventNumber = () => {
-    const defaultValue = '8'; // Valor predeterminado deseado
-    inputLongiNumber.value = defaultValue;
-    inputLongiRange.value = defaultValue;
+    inputLongiRange.value = inputLongiNumber.value;
 };
 const eventRange = ()=> {
     inputLongiNumber.value = inputLongiRange.value;
@@ -58,7 +56,9 @@ const option = () => {
 
 
 document.addEventListener('DOMContentLoaded', ()=> {
-    eventNumber();
+    const defaultValue = '8'; // Valor predeterminado deseado
+    inputLongiNumber.value = defaultValue;
+    inputLongiRange.value = defaultValue;
     inputLongiNumber.addEventListener('input', eventNumber);
     inputLongiRange.addEventListener('input', eventRange); 
     
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         newInput.value = contraseña;
         console.log(contraseña);
 
-        newInput.style.width = '500px'
+        newInput.classList.add('w-50', 'rounded-lg', 'border', 'p-1');
         domGenerarpassword.append(newInput);
 
         newInput.select();
