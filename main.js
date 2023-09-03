@@ -10,7 +10,7 @@ domGenerarpassword = document.getElementById('generarpassword');
 
 const numeros = '0123456789',
 mayusculas = 'ABCDFGHIJKMNÑOPQRSWXYZ',
-minusculas = 'abcdfghijkmnÑopqrswzyz',
+minusculas = 'abcdfghijkmnñopqrswzyz',
 simbolos = '-+/*';
 
 let contraseña = '';
@@ -28,14 +28,12 @@ const option = () => {
 
     checkboxes.forEach(checkbox => {
 
-        caracteres = mayusculas + minusculas + simbolos;
-
         if (domTodos.checked) {
             checkboxes.forEach(checkbox => {
                 checkbox.checked = true;
             })
-        };
-
+        }; 
+        
         if (checkbox.checked) { 
             const id = checkbox.id;
             if (id === 'mayusculas') {
@@ -46,8 +44,9 @@ const option = () => {
                 caracteres += simbolos;
             } else if (id === 'numeros') {
                 caracteres += numeros;
-            }
+            } 
         };
+
     });
 
     console.log(caracteres);
@@ -63,13 +62,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
     inputLongiRange.addEventListener('input', eventRange); 
     
     domBtnGenerator.addEventListener('click', () => {
+        contraseña = ''; // Restablecer la contraseña
         const caract = option();
         let longitud = parseInt(inputLongiNumber.value, 10);
         console.log(caract);
         console.log(longitud);
         domGenerarpassword.innerHTML = ''; // Borra contenido anterior
 
-        contraseña = ''; // Restablecer la contraseña
         const newInput = document.createElement('input');
 
         for (let i = 0; i < longitud; i++) {
