@@ -49,7 +49,6 @@ const option = () => {
 
     });
 
-    console.log(caracteres);
     return caracteres; // Devolver la cadena de caracteres
 };
 
@@ -77,7 +76,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
 
         newInput.value = contraseña;
-        console.log(contraseña);
 
         newInput.classList.add('w-50', 'rounded-lg', 'border', 'p-1');
         domGenerarpassword.append(newInput);
